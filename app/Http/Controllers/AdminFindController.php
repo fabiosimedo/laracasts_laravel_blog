@@ -17,7 +17,7 @@ class AdminFindController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'thumbnail' => 'required|image',
+            'thumbnail' => 'required',
             'slug' => ['required', Rule::unique('posts', 'slug')],
             'excerpt' => 'required',
              'body' => 'required',
@@ -25,7 +25,7 @@ class AdminFindController extends Controller
         ]);
 
         $attributes['user_id'] = auth()->id();
-        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        // $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 
         Post::create($attributes);
 

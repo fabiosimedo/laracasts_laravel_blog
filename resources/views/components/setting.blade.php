@@ -38,7 +38,7 @@
                 <label for="thumbnail" class="block mb-2 uppercase font-bold text-xs text-gray-700">thumbnail</label>
                 <input
                     class="border border-gray-400 p-2 w-full"
-                    type="file"
+                    type="text"
                     name="thumbnail"
                     id="thumbnail"
                     value="{{ old('thumbnail') }}"

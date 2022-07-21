@@ -6,7 +6,7 @@
                 @csrf
 
                 <header class="flex p-6 rounded-xl">
-                    <img src="https://i.pravatar.cc/100?u={{ auth()->id() }}" alt="User thumbnail" class="rounded-xl">
+                    <img src="/images/comment.jpg" alt="User thumbnail" class="rounded-xl" width="100" height="80">
                     <h2 class="ml-6">Leave a Comment</h2>
                 </header>
 

@@ -2,7 +2,7 @@
 
 <x-panel>
 <article class="flex bg-gray-100 space-x-4 m-2">
-    <div><img class="rounded-xl m-3" src="https://i.pravatar.cc/100?u={{ $comment->user_id }}" width="60" height="60"/></div>
+    <div><img class="rounded-xl m-3" src="/images/blank-profile-picture.png" width="60" height="60" alt="User profile picture"/></div>
 
     <div>
         <header class="m-3">
@@ -16,3 +16,5 @@
     </div>
 </article>
 </x-panel>
+
+{{-- https://i.pravatar.cc/100?u={{ $comment->user_id }} --}}

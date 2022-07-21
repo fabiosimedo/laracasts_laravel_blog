@@ -21,7 +21,7 @@ class MustBeAdmin
             abort(Response::HTTP_FORBIDDEN);
         }
 
-        if(! auth()->user()->isAdmin) {
+        if(! auth()->user()->isadmin) {
             abort(Response::HTTP_FORBIDDEN);
         }
 

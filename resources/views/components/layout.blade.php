@@ -4,7 +4,7 @@
     @auth
         {{ auth()->user()->username }}
     @else
-        Blog
+        Blog do Simedo
     @endauth
 
 </title>
@@ -23,7 +23,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <h1 class="text-xs font-bold uppercase">Logo do Blog</h1>
+                    <h1 class="text-xs font-bold uppercase">Blog simedo</h1>
                 </a>
             </div>
 

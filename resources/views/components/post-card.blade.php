@@ -3,7 +3,7 @@
 
     <div class="py-6 px-5">
         <div>
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog Post illustration" class="rounded">
+            <img src="{{ $post->thumbnail }}" alt="Blog Post illustration" class="rounded">
         </div>
 
         <div class="mt-8 flex flex-col justify-between">

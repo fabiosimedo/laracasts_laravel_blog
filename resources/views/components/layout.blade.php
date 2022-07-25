@@ -6,30 +6,51 @@
     @else
         Blog do Simedo
     @endauth
-
 </title>
+
 <style>
     html{ scroll-behavior: smooth }
+    @media only screen and (min-width: 425px) {
+        html {
+            font-size: 2.2vh
+        }
+        #nav-bar{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #logo{
+            font-size: 2.5vh;
+            margin-top: -1rem;
+        }
+        #nav-div{
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+
+    }
 </style>
+
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <body style="font-family: Open Sans, sans-serif">
     <x-flash />
 
     <section class="px-6 py-8">
-        <nav class="md:flex md:justify-between md:items-center">
+        <nav class="md:flex md:justify-between md:items-center" id="nav-bar">
             <div>
                 <a href="/">
-                    <h1 class="text-xs font-bold uppercase">Blog do Simedo</h1>
+                    <h1 class="text-xs font-bold uppercase" id="logo">Blog do Simedo</h1>
                 </a>
             </div>
 
-            <div class="mt-8 md:mt-0 flex items-center">
+            <div class="mt-8 md:mt-0 flex items-center" id="nav-div">
                 @auth
-                    <x-dropdown>
+                    <x-dropdown id="welcome-message-btn">
                         <x-slot name="trigger">
                             <button
                                 class="text-xs font-bold uppercase"

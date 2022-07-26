@@ -17,11 +17,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
     .btns{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
 </style>
@@ -37,7 +39,7 @@
 
     <section class="px-6 py-8">
         <nav>
-            <div style="margin-top: -1.5rem">
+            <div class="-mt-2 mb-3">
                 <a href="/">
                     <h1 class="text-xs font-bold uppercase">Blog do Simedo</h1>
                 </a>
@@ -46,11 +48,11 @@
             <div class="btns">
                 @auth
                     <x-dropdown>
-                        <x-slot name="trigger">
+                        <x-slot name="trigger" class="flex">
                             <button
-                                class="text-xs font-bold uppercase"
+                            class="bg-transparent text-blue-400 font-semibold py-2 px-4 border border-blue-500 hover:border-transparent rounded flex-1 text-center px-14 py-3 ml-2"
                                 {{ !auth()->user()->isadmin ? 'disabled' : '' }}
-                            >Bem vindo {{ auth()->user()->name }}</button>
+                            >Bem vindo <strong class="text-blue-700">{{ auth()->user()->name }}</strong></button>
                         </x-slot>
 
                         <x-dropdown-item
@@ -86,7 +88,7 @@
                 @endauth
 
                 @if (! request()->routeIs('post-admin-create') && ! request()->routeIs('post-admin'))
-                    <a href="#newsletter" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                    <a href="#newsletter" class="bg-blue-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
                         Se inscreva para Atualizações
                     </a>
                 @endif

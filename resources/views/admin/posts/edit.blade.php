@@ -1,6 +1,6 @@
 <x-layout>
 <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
-    <h1 class="text-center text-xl">Editando Post: {{ $post->title }}</h1>
+    <h1 class="text-center text-xl">Editando: <b>{{ $post->title }}</b></h1>
     <x-panel class="bg-gray-100 max-w-sm mx-auto">
         <form action="/admin/posts/{{ $post->id }}" method="post" class="p-4" enctype="multipart/form-data">
             @csrf
@@ -38,12 +38,12 @@
                 <label for="thumbnail" class="block mb-2 uppercase font-bold text-xs text-gray-700">thumbnail</label>
                 <input
                     class="border border-gray-400 p-2 w-full"
-                    type="file"
+                    type="text"
                     name="thumbnail"
                     id="thumbnail"
                     value="{{ $post->thumbnail }}"
                 >
-                <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Post image " style="max-width: 100%; height: auto;" class="mt-2 rounded-xl">
+                <img src="{{ $post->thumbnail }}" alt="Post image " style="max-width: 100%; height: auto;" class="mt-2 rounded-xl">
                 @error('thumbnail')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror

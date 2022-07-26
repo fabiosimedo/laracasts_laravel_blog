@@ -46,7 +46,7 @@ class AdminFindController extends Controller
     {
         $attributes = request()->validate([
             'title' => 'required',
-            'thumbnail' => 'image',
+            'thumbnail' => 'text|required',
             'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
             'excerpt' => 'required',
              'body' => 'required',

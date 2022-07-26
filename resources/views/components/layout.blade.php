@@ -9,44 +9,21 @@
 </title>
 
 <style>
-    html{ scroll-behavior: smooth }
-    @media only screen and (min-width: 425px) {
-        html {
-            font-size: 2.2vh
-        }
-        #nav-bar{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center
-        }
-        #logo{
-            display: block;
-            margin: -50px auto 0 auto;
-        }
-        #logo h1{
-            font-size: 2.5vh;
-        }
-
-        #nav-div{
-            display: flex;
-            flex-direction: column;
-            margin-top: 1rem;
-        }
-        #btn-align{
-            display: block;
-            margin: 0 auto 50px auto;
-        }
-
-        /* #register{
-            display: block;
-            margin: 0 auto 50px auto;
-        }
-        #enter {
-            display: block;
-            margin: 0 auto 50px auto;
-        } */
-
+    html{
+        scroll-behavior: smooth;
+        font-size: 2.4vh;
     }
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btns{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 </style>
 
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -59,16 +36,16 @@
     <x-flash />
 
     <section class="px-6 py-8">
-        <nav class="md:flex md:justify-between md:items-center" id="nav-bar">
-            <div  id="logo">
+        <nav>
+            <div style="margin-top: -1.5rem">
                 <a href="/">
                     <h1 class="text-xs font-bold uppercase">Blog do Simedo</h1>
                 </a>
             </div>
 
-            <div class="mt-8 md:mt-0 flex items-center" id="nav-div">
+            <div class="btns">
                 @auth
-                    <x-dropdown id="welcome-message-btn">
+                    <x-dropdown>
                         <x-slot name="trigger">
                             <button
                                 class="text-xs font-bold uppercase"
@@ -98,16 +75,18 @@
                     <form method="POST" action="/logout">
                         @csrf
 
-                        <button type="submit" class="text-xs font-semibold text-blue-500 ml-6" id="btn-align">Sair</button>
+                        <button type="submit" class="text-xs font-semibold text-blue-500 ml-6" style="text-align: center; margin: 1.5rem 0">Sair</button>
                     </form>
 
                 @else
-                    <a href="/register" class="text-xs font-bold uppercase" id="btn-align">Registrar</a>
-                    <a href="/login" class="text-xs font-bold uppercase ml-5" id="btn-align">Entrar</a>
+                    <div class="register-or-enter" style="margin: 1.5rem 0">
+                        <a href="/register" class="text-xs font-bold uppercase">Registrar</a>
+                        <a href="/login" class="text-xs font-bold uppercase ml-5">Entrar</a>
+                    </div>
                 @endauth
 
                 @if (! request()->routeIs('post-admin-create') && ! request()->routeIs('post-admin'))
-                    <a href="#newsletter" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5" id="btn-align">
+                    <a href="#newsletter" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                         Se inscreva para Atualizações
                     </a>
                 @endif

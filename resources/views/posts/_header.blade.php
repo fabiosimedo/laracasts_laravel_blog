@@ -1,4 +1,4 @@
-<header class="max-w-xl mx-auto mt-20 text-center">
+<header class="max-w-xl mx-auto mt-12 text-center">
     <h1 class="text-4xl">
         Programador <span class="text-blue-500"> AUTODIDATA </span>
     </h1>

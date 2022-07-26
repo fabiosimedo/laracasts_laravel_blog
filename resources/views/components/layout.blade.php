@@ -17,16 +17,34 @@
         #nav-bar{
             display: flex;
             flex-wrap: wrap;
+            justify-content: center
         }
         #logo{
-            font-size: 2.5vh;
-            margin-top: -1rem;
+            display: block;
+            margin: -50px auto 0 auto;
         }
+        #logo h1{
+            font-size: 2.5vh;
+        }
+
         #nav-div{
             display: flex;
             flex-direction: column;
             margin-top: 1rem;
         }
+        #btn-align{
+            display: block;
+            margin: 0 auto 50px auto;
+        }
+
+        /* #register{
+            display: block;
+            margin: 0 auto 50px auto;
+        }
+        #enter {
+            display: block;
+            margin: 0 auto 50px auto;
+        } */
 
     }
 </style>
@@ -42,9 +60,9 @@
 
     <section class="px-6 py-8">
         <nav class="md:flex md:justify-between md:items-center" id="nav-bar">
-            <div>
+            <div  id="logo">
                 <a href="/">
-                    <h1 class="text-xs font-bold uppercase" id="logo">Blog do Simedo</h1>
+                    <h1 class="text-xs font-bold uppercase">Blog do Simedo</h1>
                 </a>
             </div>
 
@@ -80,16 +98,16 @@
                     <form method="POST" action="/logout">
                         @csrf
 
-                        <button type="submit" class="text-xs font-semibold text-blue-500 ml-6">Sair</button>
+                        <button type="submit" class="text-xs font-semibold text-blue-500 ml-6" id="btn-align">Sair</button>
                     </form>
 
                 @else
-                    <a href="/register" class="text-xs font-bold uppercase">Registrar</a>
-                    <a href="/login" class="text-xs font-bold uppercase ml-5">Entrar</a>
+                    <a href="/register" class="text-xs font-bold uppercase" id="btn-align">Registrar</a>
+                    <a href="/login" class="text-xs font-bold uppercase ml-5" id="btn-align">Entrar</a>
                 @endauth
 
                 @if (! request()->routeIs('post-admin-create') && ! request()->routeIs('post-admin'))
-                    <a href="#newsletter" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                    <a href="#newsletter" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5" id="btn-align">
                         Se inscreva para Atualizações
                     </a>
                 @endif

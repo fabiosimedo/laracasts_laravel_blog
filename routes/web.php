@@ -31,6 +31,7 @@ Route::post('/post/{post:slug}/comments', [FindCommentController::class, 'store'
 Route::get('admin/posts/create', [AdminFindController::class, 'create'])->middleware('admin')->name('post-admin-create');
 Route::post('admin/posts', [AdminFindController::class, 'store'])->middleware('admin');
 Route::get('admin/posts', [AdminFindController::class, 'index'])->middleware('admin')->name('post-admin');
+Route::get('admin/dashboard', [AdminFindController::class, 'dashboard'])->middleware('admin')->name('post-admin-dashboard');
 Route::get('/admin/posts/{post}', [AdminFindController::class, 'edit'])->middleware('admin')->name('post-admin');
 Route::patch('/admin/posts/{post}', [AdminFindController::class, 'update'])->middleware('admin');
 Route::delete('/admin/posts/{post}', [AdminFindController::class, 'destroy'])->middleware('admin');

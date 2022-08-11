@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Validation\Rule;
 
 class AdminFindController extends Controller
@@ -61,6 +62,11 @@ class AdminFindController extends Controller
 
         return back()->with('success', 'Post atualizado!');
 
+    }
+
+    public function dashboard(User $user)
+    {
+        return view('admin.posts.dashboard', [ 'user' => $user ]);
     }
 
     public function destroy(Post $post)

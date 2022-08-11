@@ -62,7 +62,8 @@
                             Novo Post
                         </x-dropdown-item>
                         <x-dropdown-item
-                            href="#"
+                            href="/admin/dashboard"
+                            :active="request()->routeIs('post-admin-dashboard')"
                         >
                             Dashboard
                         </x-dropdown-item>

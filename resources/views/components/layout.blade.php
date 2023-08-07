@@ -13,19 +13,6 @@
         scroll-behavior: smooth;
         font-size: 2.4vh;
     }
-    nav{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .btns{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
 </style>
 
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -37,15 +24,15 @@
 <body style="font-family: Open Sans, sans-serif">
     <x-flash />
 
-    <section class="px-6 py-8">
-        <nav>
-            <div class="-mt-2 mb-3">
+    <section>
+        <nav class="flex justify-between">
+            <div class="w-2/5 py-2 px-2">
                 <a href="/">
                     <h1 class="text-xs font-bold uppercase">Blog do Simedo</h1>
                 </a>
             </div>
 
-            <div class="btns">
+            <div>
                 @auth
                     <x-dropdown>
                         <x-slot name="trigger" class="flex">
@@ -82,20 +69,22 @@
                     </form>
 
                 @else
-                    <div class="register-or-enter" style="margin: 1.5rem 0">
+                    <div class="flex justify-end py-2 px-2">
                         <a href="/register" class="text-xs font-bold uppercase">Registrar</a>
-                        <a href="/login" class="text-xs font-bold uppercase ml-5">Entrar</a>
+                        <a href="/login" class="text-xs font-bold uppercase ml-2">Entrar</a>
                     </div>
                 @endauth
-
-                @if (! request()->routeIs('post-admin-create') && ! request()->routeIs('post-admin'))
-                    <a href="#newsletter" class="bg-blue-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
-                        Se inscreva para Atualizações
-                    </a>
-                @endif
-
             </div>
+
         </nav>
+
+        <div class="flex justify-center mt-3">
+            @if (! request()->routeIs('post-admin-create') && ! request()->routeIs('post-admin'))
+                <a href="#newsletter" class="bg-blue-500 rounded-full text-xs font-semibold text-white uppercase py-2 px-1 text-center">
+                    Se inscreva para Atualizações
+                </a>
+            @endif
+        </div>
 
         {{ $slot }}
 

@@ -1,15 +1,13 @@
-<header class="max-w-xl mx-auto mt-12 text-center">
-    <h1 class="text-4xl">
-        Programador <span class="text-blue-500"> AUTODIDATA </span>
+<header class="max-w-xl mx-auto mt-2 text-center">
+    <h1 class="text-2xl text-center">
+       <p>Programador</p>
+       <p class="text-blue-300"> AUTODIDATA </p>
     </h1>
 
     <h2 class="inline-flex mt-2">Por Fabio Simedo</h2>
 
-    {{-- <img src="/images/lary-head.svg" alt="Head of Lary the mascot"> --}}
-
-
-    <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
-        <div class="relative lg:inline-flex bg-gray-100 rounded-xl">
+    <div class="mt-4">
+        <div class="bg-gray-100 rounded-xl">
 
             <x-category-dropdown />
 

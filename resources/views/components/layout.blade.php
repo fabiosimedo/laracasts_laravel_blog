@@ -26,20 +26,34 @@
 
     <section>
         <nav class="flex justify-between">
-            <div class="w-2/5 py-2 px-2">
-                <a href="/">
-                    <h1 class="text-xs font-bold uppercase">Blog do Simedo</h1>
-                </a>
-            </div>
+            @guest
+                <div class="w-2/5 py-2 px-2 text-xs font-bold uppercase text-center">
+            @endguest
+
+            @auth
+                <div class="py-4 px-2 uppercase text-center" style="font-size: .4rem">
+            @endauth
+
+                    <a href="/">
+                        <h1>
+                            <p>Blog</p>
+                            <p>do Simedo</p>
+                        </h1>
+                    </a>
+                </div>
 
             <div>
                 @auth
+                <div class="flex">
                     <x-dropdown>
                         <x-slot name="trigger" class="flex">
                             <button
-                            class="bg-transparent text-blue-400 font-semibold py-2 px-4 border border-blue-500 hover:border-transparent rounded flex-1 text-center px-14 py-3 ml-2"
+                                class="bg-transparent text-blue-400
+                                    font-semibold border
+                                    hover:border-transparent rounded
+                                    text-end py-3 px-3"
                                 {{ !auth()->user()->isadmin ? 'disabled' : '' }}
-                            >Bem vindo <strong class="text-blue-700">{{ auth()->user()->name }}</strong></button>
+                            ><strong class="text-blue-700">{{ auth()->user()->name }}</strong></button>
                         </x-slot>
 
                         <x-dropdown-item
@@ -61,30 +75,52 @@
                             Editar
                         </x-dropdown-item>
                     </x-dropdown>
-
                     <form method="POST" action="/logout">
                         @csrf
 
-                        <button type="submit" class="text-xs font-semibold text-blue-500 ml-6" style="text-align: center; margin: 1.5rem 0">Sair</button>
+                        <button type="submit"
+                                class="bg-white hover:bg-gray-100 text-gray-800
+                                    font-semibold py-2 px-4 border
+                                    border-gray-400 rounded shadow
+                                    mt-2 mr-2">Sair</button>
                     </form>
+                </div>
+
+
 
                 @else
                     <div class="flex justify-end py-2 px-2">
-                        <a href="/register" class="text-xs font-bold uppercase">Registrar</a>
-                        <a href="/login" class="text-xs font-bold uppercase ml-2">Entrar</a>
+
+                            <a href="/register" class="text-xs font-bold uppercase">
+                                <button
+                                    class="bg-transparent hover:bg-blue-500 text-blue-700
+                                        font-semibold hover:text-white py-2 px-4
+                                        border border-blue-500
+                                        hover:border-transparent rounded"> Registrar
+                                </button>
+                            </a>
+
+                        <a href="/login" class="text-xs font-bold uppercase ml-2">
+                            <button
+                                class="bg-transparent hover:bg-blue-500 text-blue-700
+                                    font-semibold hover:text-white py-2 px-6
+                                    border border-blue-500
+                                    hover:border-transparent rounded"> entrar
+                            </button>
+                        </a>
                     </div>
                 @endauth
             </div>
 
         </nav>
 
-        <div class="flex justify-center mt-3">
+        {{-- <div class="flex justify-center mt-3">
             @if (! request()->routeIs('post-admin-create') && ! request()->routeIs('post-admin'))
                 <a href="#newsletter" class="bg-blue-500 rounded-full text-xs font-semibold text-white uppercase py-2 px-1 text-center">
                     Se inscreva para Atualizações
                 </a>
             @endif
-        </div>
+        </div> --}}
 
         {{ $slot }}
 

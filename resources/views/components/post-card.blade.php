@@ -1,5 +1,5 @@
 <article
-    {{ $attributes->merge([ 'class' => 'border border-black rounded-xl border-solid border-2 border-sky-300 mt-4 transition-colors duration-300 hover:bg-gray-300']) }}>
+    {{ $attributes->merge([ 'class' => 'border border-black rounded-xl border-solid border-2 border-sky-300 mt-4 transition-colors duration-300 hover:bg-gray-300 m-2']) }}>
 
     <div class="py-6 px-5">
         <div>

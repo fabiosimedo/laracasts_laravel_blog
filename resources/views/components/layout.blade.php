@@ -13,6 +13,11 @@
         scroll-behavior: smooth;
         font-size: 2.4vh;
     }
+    @media only screen and (min-width: 600px) {
+        div#logo{
+            font-size: .4rem
+        }
+    }
 </style>
 
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -31,7 +36,7 @@
             @endguest
 
             @auth
-                <div class="py-4 px-2 uppercase text-center" style="font-size: .4rem">
+                <div class="py-4 px-2 uppercase text-center" id="logo">
             @endauth
 
                     <a href="/">

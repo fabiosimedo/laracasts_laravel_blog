@@ -26,7 +26,7 @@
                 <div class="flex justify-end">
                     <button
                         type="submit"
-                        class="bg-blue-500 text-white uppercase font-semibold text-xs px-10 py-2 rounded-xl hover:bg-blue-600 mb-3">Enviar</button>
+                        class="bg-blue-500 text-white uppercase font-semibold text-xs px-10 py-2 rounded-xl hover:bg-blue-600 mb-3" id="send">Enviar</button>
                 </div>
             </form>
         </X-panel>
@@ -39,3 +39,8 @@
     @endforeach
 
 </section>
+
+<script>
+    const btn = document.querySelector('#send')
+    btn.addEventListener('click', () => btn.style = 'display: none')
+</script>

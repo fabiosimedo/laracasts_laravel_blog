@@ -1,31 +1,44 @@
 <!doctype html>
 
-<title>
-    @auth
-        {{ auth()->user()->username }}
-    @else
-        Blog do Simedo
-    @endauth
-</title>
+<head>
 
-<style>
-    html{
-        scroll-behavior: smooth;
-        font-size: 2.4vh;
-    }
-    @media only screen and (min-width: 600px) {
-        div#logo{
-            font-size: .4rem
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JDEZED7FH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2JDEZED7FH');
+    </script>
+
+    <title>
+        @auth
+            {{ auth()->user()->username }}
+        @else
+            Blog do Simedo
+        @endauth
+    </title>
+
+    <style>
+        html{
+            scroll-behavior: smooth;
+            font-size: 2.4vh;
         }
-    }
-</style>
+        @media only screen and (min-width: 600px) {
+            div#logo{
+                font-size: .4rem
+            }
+        }
+    </style>
 
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+</head>
 <body style="font-family: Open Sans, sans-serif">
     <x-flash />
 

@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+    php:
+      container_name: php
+      build:
+        context: .
+        target: php
+        # Add the following line to enable BuildKit
+        # builder: buildkit
+      working_dir: /var/www
+      volumes:
+        - ./:/var//www
+      ports:
+        - 8000:8000
+      depends_on:
+        - database
+      environment:
+      - DOCKER_BUILDKIT=1 
+
+    database:
+      container_name: database
+      image: postgres:latest
+      ports:
+        - "5432:5432"
+      environment:
+        - POSTGRES_CONNECTION=pgsql
+        - POSTGRES_HOST=54.233.193.165
+        - POSTGRES_PORT=5432
+        - POSTGRES_DATABASE=tnhzlfrq
+        - POSTGRES_USERNAME=tnhzlfrq
+        - POSTGRES_PASSWORD=Cc7_ZvhAu5nYBgmp2Gx-j7ktw_rQs65u
+        
+      volumes:
+        - db-data:/var/lib/postgresql/data
+    
+volumes:
+    db-data: ~
+
+
+# docker buildx build -t your_image_name .
